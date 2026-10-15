@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Interactive Python Programming Module 1 — Kiran Mudaraddi" name="description"/><title>Python Programming · Module 1 | Kiran Mudaraddi</title>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Interactive Python Programming Modules 1 and 2 — Kiran Mudaraddi" name="description"/><title>Python Programming · Modules 1 & 2 | Kiran Mudaraddi</title>
 <style>
 :root{--bg:#f7f8fc;--card:#fff;--text:#18212f;--muted:#637083;--line:#e4e8ef;--accent:#3776ab;--accent2:#ffd343;--code:#111827;--codeText:#e5e7eb;--shadow:0 10px 30px rgba(20,30,50,.08)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}a{color:inherit;text-decoration:none}button,input{font:inherit}.progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:99}
@@ -368,6 +368,15 @@ body.dark .topic-question{background:linear-gradient(90deg,#101b31,#111827);bord
 <a href="#assessment"><span>📝</span> Assignment · 20 Marks</a>
 <a href="#assessment"><span>🏆</span> FA1 · 20 Marks</a>
 </div>
+
+<div class="side-section">
+<a class="side-part" href="#module-2"><span>MODULE 2</span><small>Strings · Tuples · Lists</small></a>
+<a class="side-topic" href="#m2-strings"><b>33</b><span>Strings: indexing, slicing & methods</span></a>
+<a class="side-topic" href="#m2-tuples"><b>34</b><span>Tuples & tuple assignment</span></a>
+<a class="side-topic" href="#m2-lists"><b>35</b><span>Lists, mutability & operations</span></a>
+<a class="side-topic" href="#m2-aliasing"><b>36</b><span>References, aliasing & cloning</span></a>
+<a class="side-topic" href="#m2-nested"><b>37</b><span>Nested lists & matrices</span></a>
+</div>
 </nav>
 </aside><main id="top"><section class="hero"><span class="eyebrow">1BPLC105B / 205B · Python Programming</span><h1>The Way of the Program</h1><p>Interactive Module 1 learning notes covering the complete requested syllabus: programming fundamentals, variables and expressions, iteration, and functions.</p><div class="author-credit"><strong>Prepared by</strong><br/><span>Prof. Kiran Mudaraddi</span></div><div class="meta"><span class="pill">32 core topics</span><span class="pill">Python Programming · Module 1</span><span class="pill">GitHub Pages ready</span></div></section>
 <div class="content"><div class="box" style="margin-bottom:30px"><h3 style="margin-top:0">How to use this module</h3><p>Read each topic, run or copy the Python example, inspect the expected output, and answer the quick check. Use the search box to jump directly to a topic.</p></div>
@@ -727,7 +736,295 @@ Your Name, USN and Section are verified by the backend, and the final score is r
 <p class="quiz-mini">Quiz window: 9 October 2026 · 9:00 AM–11:00 AM IST</p>
 </div></section>
 
-<footer><strong>Kiran Mudaraddi · Python Programming · Module 1</strong><br/>Interactive course notes for classroom learning, self-study and lab preparation.</footer>
+
+<section id="module-2" class="part module-two">
+  <div class="part-label">MODULE 2 · STRINGS, TUPLES & LISTS</div>
+  <h2>Working with Collections of Data</h2>
+  <p class="part-intro">Learn how Python represents text, groups related values, and stores collections that can be processed, transformed and analyzed.</p>
+  <div class="box" style="margin:18px 0 26px">
+    <h3>Learning route</h3>
+    <div class="flow"><div class="node">Text<br><small>str</small></div><span class="arrow">→</span><div class="node">Grouped values<br><small>tuple</small></div><span class="arrow">→</span><div class="node">Changeable collection<br><small>list</small></div></div>
+    <p class="desc">Use the cycle <strong>Predict → Run → Observe → Explain</strong>. Read each example, predict its output, then run it in the Python Runner below.</p>
+  </div>
+
+  <div class="part-label">PART A</div>
+  <h2>Strings — Text as a Sequence</h2>
+  <p class="part-intro">A string is an immutable sequence of characters. Indexing, slicing, traversal and built-in methods let us inspect and process text.</p>
+
+  <article class="topic" id="m2-strings"><div class="topic-num">33</div><div>
+    <h3>Working with Strings as Single Things and as Parts</h3>
+    <p class="desc">A string can be treated as one complete value or inspected character by character. Index positions start at <code>0</code>; negative indexes count from the end.</p>
+    <div class="four"><div><b>WHOLE</b><span><code>"Python"</code></span></div><div><b>FIRST</b><span><code>word[0]</code> → P</span></div><div><b>LAST</b><span><code>word[-1]</code> → n</span></div><div><b>LENGTH</b><span><code>len(word)</code> → 6</span></div></div>
+    <div class="code-card"><div class="code-head"><span>string_parts.py</span><button class="copy" onclick="copyCode(this)">Copy</button></div><pre><code>word = "Python"
+print(word)
+print(word[0])
+print(word[-1])
+print(len(word))</code></pre><div class="output"><b>Output</b><pre>Python
+P
+n
+6</pre></div></div>
+    <div class="checkpoint"><b>Try it</b><span>Replace <code>Python</code> with your name. Predict the first character, last character and length.</span></div>
+  </div></article>
+
+  <article class="topic" id="m2-slices"><div class="topic-num">34</div><div>
+    <h3>Slices, String Comparison, and Membership</h3>
+    <p class="desc">A slice extracts a section using <code>text[start:stop:step]</code>. The start is included, but the stop is excluded. String comparisons are lexicographic and case-sensitive. Use <code>in</code> and <code>not in</code> to test whether a substring occurs.</p>
+    <div class="code-card"><div class="code-head"><span>slices_and_membership.py</span><button class="copy" onclick="copyCode(this)">Copy</button></div><pre><code>text = "COMPUTER"
+print(text[0:3])       # first three characters
+print(text[3:])        # from index 3 to the end
+print(text[::-1])      # reversed string
+print("PUT" in text)
+print("put" in text)
+print("PYTHON" < "python")</code></pre><div class="output"><b>Output</b><pre>COM
+PUTER
+RETUPMOC
+True
+False
+True</pre></div></div>
+    <p class="desc"><strong>Remember:</strong> <code>"A" != "a"</code>. Comparisons use character codes, not dictionary meaning. <code>"put" not in text</code> is the negated membership test.</p>
+  </div></article>
+
+  <article class="topic" id="m2-traversal"><div class="topic-num">35</div><div>
+    <h3>Traversal with a for Loop; Looping and Counting</h3>
+    <p class="desc">Traversal means visiting each character in order. A counter records how many characters satisfy a condition.</p>
+    <div class="code-card"><div class="code-head"><span>count_vowels.py</span><button class="copy" onclick="copyCode(this)">Copy</button></div><pre><code>word = "programming"
+vowels = "aeiou"
+count = 0
+
+for ch in word:
+    if ch in vowels:
+        count += 1
+
+print("Vowels:", count)</code></pre><div class="output"><b>Output</b><pre>Vowels: 3</pre></div></div>
+    <div class="checkpoint"><b>Predict</b><span>What changes if <code>word = "EDUCATION".lower()</code>? Why is <code>lower()</code> useful?</span></div>
+  </div></article>
+
+  <article class="topic" id="m2-immutable"><div class="topic-num">36</div><div>
+    <h3>Strings Are Immutable</h3>
+    <p class="desc">You cannot change an individual character inside an existing string. Build a new string instead.</p>
+    <div class="code-card"><div class="code-head"><span>immutability.py</span><button class="copy" onclick="copyCode(this)">Copy</button></div><pre><code>word = "cat"
+# word[0] = "b"  # TypeError: strings cannot be changed in place
+word = "b" + word[1:]
+print(word)</code></pre><div class="output"><b>Output</b><pre>bat</pre></div></div>
+    <p class="desc">The assignment creates a new string and makes <code>word</code> refer to it. It does not edit the original string.</p>
+  </div></article>
+
+  <article class="topic" id="m2-find"><div class="topic-num">37</div><div>
+    <h3>A find Function, Optional Parameters, and the Built-in find() Method</h3>
+    <p class="desc">A search function can return the position of a match. Python strings provide <code>find(sub[, start[, end]])</code>; it returns the first matching index or <code>-1</code> if the substring is absent. The start and end arguments are optional.</p>
+    <div class="code-card"><div class="code-head"><span>find_text.py</span><button class="copy" onclick="copyCode(this)">Copy</button></div><pre><code>message = "learn python with python"
+print(message.find("python"))
+print(message.find("python", 7))
+print(message.find("java"))
+print(message.find("python", 0, 10))</code></pre><div class="output"><b>Output</b><pre>6
+18
+-1
+-1</pre></div></div>
+    <p class="desc"><strong>Optional parameters:</strong> they may be omitted because Python supplies defaults. For example, <code>find("python")</code> searches the whole string.</p>
+  </div></article>
+
+  <article class="topic" id="m2-split-clean"><div class="topic-num">38</div><div>
+    <h3>split(), Cleaning Strings, and String Formatting</h3>
+    <p class="desc"><code>split()</code> separates text into a list of pieces. Cleaning commonly uses <code>strip()</code>, <code>lower()</code>, and <code>replace()</code>. Formatted strings make output readable.</p>
+    <div class="code-card"><div class="code-head"><span>clean_and_format.py</span><button class="copy" onclick="copyCode(this)">Copy</button></div><pre><code>raw = "  KIRAN, Python, BITM  "
+clean = raw.strip().lower()
+parts = clean.split(",")
+name = parts[0].title()
+language = parts[1].strip().title()
+college = parts[2].strip().upper()
+
+print(f"{name} studies {language} at {college}.")</code></pre><div class="output"><b>Output</b><pre>Kiran studies Python at BITM.</pre></div></div>
+    <p class="desc">Useful tools: <code>strip()</code> removes surrounding whitespace; <code>split(",")</code> splits at commas; <code>replace(old, new)</code> substitutes text; <code>f"..."</code> inserts values inside braces. The older <code>"{} {}".format(a, b)</code> form also works.</p>
+  </div></article>
+
+  <div class="part-label" style="margin-top:42px">PART B</div>
+  <h2>Tuples — Grouping Related Values</h2>
+  <p class="part-intro">Tuples group related values in a fixed order. They are useful for paired data, multiple assignment, and returning several results from a function.</p>
+
+  <article class="topic" id="m2-tuples"><div class="topic-num">39</div><div>
+    <h3>Tuple Values and Tuple Assignment</h3>
+    <p class="desc">A tuple is an ordered, immutable collection. Parentheses are common but commas create the tuple. A one-item tuple needs a trailing comma.</p>
+    <div class="code-card"><div class="code-head"><span>tuples.py</span><button class="copy" onclick="copyCode(this)">Copy</button></div><pre><code>student = ("Anu", 21, "CSE")
+single_item = ("Python",)
+name, age, branch = student
+
+print(student[0])
+print(name, age, branch)
+print(single_item)</code></pre><div class="output"><b>Output</b><pre>Anu
+Anu 21 CSE
+('Python',)</pre></div></div>
+    <p class="desc"><strong>Tuple assignment</strong> unpacks values into variables in order. The number of variables must match the number of values.</p>
+  </div></article>
+
+  <article class="topic" id="m2-return-tuples"><div class="topic-num">40</div><div>
+    <h3>Tuples as Return Values and Composability of Data Structures</h3>
+    <p class="desc">A function can return multiple related results as a tuple. Data structures can also be nested—for example, a list of tuples or a tuple containing lists.</p>
+    <div class="code-card"><div class="code-head"><span>return_multiple.py</span><button class="copy" onclick="copyCode(this)">Copy</button></div><pre><code>def min_max(numbers):
+    return min(numbers), max(numbers)
+
+low, high = min_max([8, 3, 12, 5])
+print("Minimum:", low)
+print("Maximum:", high)
+
+marks = [("Anu", 88), ("Ravi", 76), ("Maya", 94)]
+for name, score in marks:
+    print(f"{name}: {score}")</code></pre><div class="output"><b>Output</b><pre>Minimum: 3
+Maximum: 12
+Anu: 88
+Ravi: 76
+Maya: 94</pre></div></div>
+    <div class="checkpoint"><b>Think</b><span>Why is a list of <code>(name, mark)</code> tuples more useful than storing names and marks without a clear relationship?</span></div>
+  </div></article>
+
+  <div class="part-label" style="margin-top:42px">PART C</div>
+  <h2>Lists — Collections You Can Change</h2>
+  <p class="part-intro">Lists store ordered items and are mutable: elements can be updated, added or removed. This makes lists ideal for working with datasets.</p>
+
+  <article class="topic" id="m2-lists"><div class="topic-num">41</div><div>
+    <h3>List Values, Accessing Elements, Length, Membership, Operations and Slices</h3>
+    <p class="desc">Create a list with square brackets. Use indexes to access items, <code>len()</code> to count items, <code>in</code> to test membership, and slices to copy a portion of a list.</p>
+    <div class="code-card"><div class="code-head"><span>list_basics.py</span><button class="copy" onclick="copyCode(this)">Copy</button></div><pre><code>marks = [78, 85, 91, 67, 88]
+print(marks[0])
+print(marks[-1])
+print(len(marks))
+print(91 in marks)
+print(marks[1:4])
+print(marks + [95, 82])
+print(marks * 2)</code></pre><div class="output"><b>Output</b><pre>78
+88
+5
+True
+[85, 91, 67]
+[78, 85, 91, 67, 88, 95, 82]
+[78, 85, 91, 67, 88, 78, 85, 91, 67, 88]</pre></div></div>
+    <p class="desc">List operations include concatenation with <code>+</code>, repetition with <code>*</code>, membership with <code>in</code>, and slicing with <code>[start:stop]</code>.</p>
+  </div></article>
+
+  <article class="topic" id="m2-mutable-delete"><div class="topic-num">42</div><div>
+    <h3>Lists Are Mutable; Updating and Deleting Elements</h3>
+    <p class="desc">Unlike strings and tuples, lists can be changed in place. Assign to an index to update an item. Use <code>del</code>, <code>pop()</code>, or <code>remove()</code> to delete items in different ways.</p>
+    <div class="code-card"><div class="code-head"><span>change_a_list.py</span><button class="copy" onclick="copyCode(this)">Copy</button></div><pre><code>colours = ["red", "blue", "green"]
+colours[1] = "yellow"
+colours.append("purple")
+del colours[0]
+removed = colours.pop()
+
+print(colours)
+print("Popped:", removed)</code></pre><div class="output"><b>Output</b><pre>['yellow', 'green']
+Popped: purple</pre></div></div>
+    <p class="desc"><code>append(x)</code> adds one item at the end; <code>insert(i, x)</code> adds at an index; <code>remove(x)</code> removes the first matching value; <code>pop(i)</code> removes and returns an item.</p>
+  </div></article>
+
+  <article class="topic" id="m2-aliasing"><div class="topic-num">43</div><div>
+    <h3>Objects and References, Aliasing, and Cloning Lists</h3>
+    <p class="desc">Variables refer to objects. If two variables refer to the same list, they are aliases: a change through either name affects the same object. Create a shallow copy with a slice or <code>copy()</code>.</p>
+    <div class="diagram"><div class="diagram-title">Aliasing versus cloning</div><div class="varbox"><div class="memory"><strong>a</strong><br/>[10, 20, 30]</div><div class="pointer">←→</div><div class="memory"><strong>b = a</strong><br/>same list object</div></div><p style="text-align:center;color:var(--muted)">Cloning with <code>b = a[:]</code> creates a separate outer list.</p></div>
+    <div class="code-card"><div class="code-head"><span>aliasing_vs_copy.py</span><button class="copy" onclick="copyCode(this)">Copy</button></div><pre><code>a = [10, 20, 30]
+alias = a
+clone = a[:]
+
+alias[0] = 99
+clone[1] = 77
+
+print("a:", a)
+print("alias:", alias)
+print("clone:", clone)</code></pre><div class="output"><b>Output</b><pre>a: [99, 20, 30]
+alias: [99, 20, 30]
+clone: [10, 77, 30]</pre></div></div>
+    <p class="desc"><strong>Important:</strong> slicing and <code>copy()</code> make shallow copies. If a list contains other mutable lists, nested objects may still be shared.</p>
+  </div></article>
+
+  <article class="topic" id="m2-list-loops"><div class="topic-num">44</div><div>
+    <h3>Lists and for Loops; List Parameters; List Methods</h3>
+    <p class="desc">A <code>for</code> loop processes each item. Lists passed to functions are references to objects, so a function can modify the original list when it uses a mutating method.</p>
+    <div class="code-card"><div class="code-head"><span>list_functions.py</span><button class="copy" onclick="copyCode(this)">Copy</button></div><pre><code>def add_bonus(scores, bonus):
+    for i in range(len(scores)):
+        scores[i] += bonus
+
+marks = [60, 72, 85]
+add_bonus(marks, 5)
+print(marks)
+
+numbers = [4, 1, 9, 2]
+numbers.sort()
+numbers.reverse()
+print(numbers)</code></pre><div class="output"><b>Output</b><pre>[65, 77, 90]
+[9, 4, 2, 1]</pre></div></div>
+    <p class="desc">Common methods: <code>append()</code>, <code>extend()</code>, <code>insert()</code>, <code>remove()</code>, <code>pop()</code>, <code>sort()</code>, <code>reverse()</code>, and <code>count()</code>. Methods such as <code>sort()</code> modify the list and usually return <code>None</code>.</p>
+  </div></article>
+
+  <article class="topic" id="m2-pure-modifiers"><div class="topic-num">45</div><div><div>
+    <h3>Pure Functions, Modifiers, and Functions that Produce Lists</h3>
+    <p class="desc">A pure function returns a result without changing its inputs. A modifier changes an object. A function can also build and return a new list.</p>
+    <div class="code-card"><div class="code-head"><span>pure_and_modifier.py</span><button class="copy" onclick="copyCode(this)">Copy</button></div><pre><code>def doubled(values):
+    result = []
+    for value in values:
+        result.append(value * 2)
+    return result
+
+def add_item(values, item):
+    values.append(item)  # modifies the original list
+
+data = [2, 4, 6]
+new_data = doubled(data)
+add_item(data, 8)
+
+print("Original after modifier:", data)
+print("Returned list:", new_data)</code></pre><div class="output"><b>Output</b><pre>Original after modifier: [2, 4, 6, 8]
+Returned list: [4, 8, 12]</pre></div></div>
+  </div></div></article>
+
+  <article class="topic" id="m2-string-list-range"><div class="topic-num">46</div><div>
+    <h3>Strings and Lists; Lists and range()</h3>
+    <p class="desc">Convert a string into a list of characters with <code>list()</code>. Convert a list of strings back with <code>"separator".join(items)</code>. Use <code>list(range(...))</code> when you need a list of numbers.</p>
+    <div class="code-card"><div class="code-head"><span>convert_sequences.py</span><button class="copy" onclick="copyCode(this)">Copy</button></div><pre><code>letters = list("CODE")
+print(letters)
+print("-".join(letters))
+print(list(range(2, 11, 2)))
+
+words = "learn python today".split()
+print(words)
+print(" ".join(words))</code></pre><div class="output"><b>Output</b><pre>['C', 'O', 'D', 'E']
+C-O-D-E
+[2, 4, 6, 8, 10]
+['learn', 'python', 'today']
+learn python today</pre></div></div>
+  </div></article>
+
+  <article class="topic" id="m2-nested"><div class="topic-num">47</div><div>
+    <h3>Nested Lists and Matrices</h3>
+    <p class="desc">A nested list contains lists as its elements. A matrix can be represented as a list of rows. Use two indexes—<code>matrix[row][column]</code>—to access a cell.</p>
+    <div class="diagram"><div class="diagram-title">A 2 × 3 matrix</div><div class="matrix"><span>2</span><span>4</span><span>6</span><span>1</span><span>3</span><span>5</span></div><p style="text-align:center;color:var(--muted)">Row 0 is <code>[2, 4, 6]</code>; row 1 is <code>[1, 3, 5]</code>.</p></div>
+    <div class="code-card"><div class="code-head"><span>matrix_sum.py</span><button class="copy" onclick="copyCode(this)">Copy</button></div><pre><code>matrix = [
+    [2, 4, 6],
+    [1, 3, 5]
+]
+
+print(matrix[0][2])  # row 0, column 2
+total = 0
+for row in matrix:
+    for value in row:
+        total += value
+
+print("Total:", total)</code></pre><div class="output"><b>Output</b><pre>6
+Total: 21</pre></div></div>
+    <div class="checkpoint"><b>Challenge</b><span>Write a program to calculate the sum of each row in a matrix and display the row sums separately.</span></div>
+  </div></article>
+
+  <div class="box" style="margin:30px 0">
+    <h3>Module 2 — Quick Revision</h3>
+    <ul class="checklist">
+      <li>Strings are ordered and immutable; use indexing, slicing, traversal and methods.</li>
+      <li><code>find()</code> returns an index or <code>-1</code>; <code>split()</code> separates text into a list.</li>
+      <li>Tuples group ordered values and support unpacking and multiple return values.</li>
+      <li>Lists are mutable; indexes and slices access items, and methods can modify the list.</li>
+      <li>Aliasing shares an object; cloning makes a separate outer list.</li>
+      <li>Nested lists can represent tables and matrices.</li>
+    </ul>
+  </div>
+</section>
+
+<footer><strong>Kiran Mudaraddi · Python Programming · Modules 1 & 2</strong><br/>Interactive course notes for classroom learning, self-study and lab preparation.</footer>
 <script>
 const topics=[...document.querySelectorAll('.topic')];
 function filterTopics(){const q=document.getElementById('search').value.toLowerCase().trim();topics.forEach(t=>t.classList.toggle('hidden',q && !t.innerText.toLowerCase().includes(q)));}
