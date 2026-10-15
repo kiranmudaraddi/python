@@ -306,6 +306,17 @@ body.dark .topic-question{background:linear-gradient(90deg,#101b31,#111827);bord
 .dark .quiz-actions{background:rgba(15,23,42,.94);border-color:#33415f}
 .dark .assessment-note{background:#111b30}
 @media(max-width:760px){.student-details{grid-template-columns:1fr}.quiz-actions{position:sticky;bottom:8px;flex-wrap:wrap}}
+
+/* Interactive predict-output and debugging activities */
+.interactive-lab{margin:28px 0;padding:clamp(18px,3vw,30px);border:1px solid var(--line);border-radius:20px;background:var(--card);box-shadow:var(--shadow)}
+.interactive-lab .lab-kicker{font-size:.76rem;letter-spacing:.09em;font-weight:900;color:var(--accent);text-transform:uppercase}
+.interactive-lab h2{margin:5px 0 8px}.interactive-lab .lab-intro{color:var(--muted);margin:0 0 20px}
+.activity-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:14px}
+.activity-card{border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0;background:var(--bg)}
+.activity-type{display:inline-block;font-size:.7rem;font-weight:900;letter-spacing:.04em;text-transform:uppercase;padding:4px 8px;border-radius:999px;background:rgba(55,118,171,.12);color:var(--accent);margin-bottom:9px}
+.activity-card h3{font-size:1.02rem;margin:0 0 8px}.activity-card p{margin:8px 0}.activity-card pre{overflow:auto;white-space:pre;margin:10px 0;padding:12px;border-radius:9px;background:var(--code);color:var(--codeText);font-size:.88rem}
+.activity-card details{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}.activity-card summary{cursor:pointer;font-weight:800;color:var(--accent)}.activity-answer{padding:10px 0 0;color:var(--text)}.activity-answer strong{color:var(--accent)}
+@media(max-width:600px){.interactive-lab{padding:15px}.activity-card{padding:13px}}
 </style></head><body><div class="progress" id="progress"></div>
 <header><div class="top"><button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open module menu" aria-expanded="false">☰ MENU</button><a class="brand" href="#top">Kiran Mudaraddi <span>Python Learning Hub</span></a><div class="search"><input id="search" oninput="filterTopics()" placeholder="Search topics, loops, functions..."/></div><button class="theme" onclick="toggleTheme()">☾</button></div></header><div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
 <div class="layout"><aside class="course-sidebar">
@@ -537,6 +548,22 @@ print(result)</code></pre><div class="output"><b>Expected output</b><pre>19.3333
 
 answer = square(6)
 print(answer)</code></pre><div class="output"><b>Expected output</b><pre>36</pre></div></div><div class="checkpoint"><b>Try it</b><span>Change one part of the example, run it, and explain the result in your own words.</span></div></div></article>
+
+<section class="interactive-lab" id="module-1-interactive" aria-labelledby="module-1-interactive-title">
+  <div class="lab-kicker">Active learning · Module 1</div>
+  <h2 id="module-1-interactive-title">Predict the Output &amp; Debug</h2>
+  <p class="lab-intro">Try to work out the result before opening each answer. Read the explanation, then test the code in the Python Runner.</p>
+  <div class="activity-grid">
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>1. Expressions</h3><p>What will this program print?</p><pre><code>x = 5
+print(x + 2 * 3)</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: 11</strong><p>Multiplication happens before addition: 2 × 3 = 6, then 5 + 6 = 11.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>2. Loop and range</h3><p>What is printed?</p><pre><code>for i in range(1, 4):
+    print(i, end=" ")</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: 1 2 3</strong><p>The stop value 4 is excluded, so the loop visits 1, 2 and 3.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Debugging challenge</span><h3>3. Find the error</h3><p>The program should print the area of a rectangle. What must change?</p><pre><code>length = 8
+width = 3
+area = length + width
+print(area)</code></pre><details><summary>Reveal fix &amp; explanation</summary><div class="activity-answer"><strong>Fix: <code>area = length * width</code></strong><p>Rectangle area is length multiplied by width, so the correct output is 24. The original code runs but uses the wrong logic (a semantic error).</p></div></details></article>
+  </div>
+</section>
 <section class="python-runner" id="python-runner">
 <div class="runner-card">
   <div class="runner-head">
@@ -1064,6 +1091,21 @@ Total: 21</pre></div></div>
   </div>
 </section>
 
+
+<section class="interactive-lab" id="module-2-interactive" aria-labelledby="module-2-interactive-title">
+  <div class="lab-kicker">Active learning · Module 2</div>
+  <h2 id="module-2-interactive-title">Predict the Output &amp; Debug</h2>
+  <p class="lab-intro">Think about indexing, mutability and list operations before revealing the explanation.</p>
+  <div class="activity-grid">
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>1. String slicing</h3><p>What does the slice return?</p><pre><code>word = "PYTHON"
+print(word[1:4])</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: YTH</strong><p>Slicing starts at index 1 and stops before index 4. The characters at indexes 1, 2 and 3 are Y, T and H.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>2. List mutation</h3><p>What is the list after append?</p><pre><code>nums = [2, 4, 6]
+nums.append(8)
+print(nums)</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: [2, 4, 6, 8]</strong><p><code>append()</code> adds one item to the end of the existing list; lists are mutable.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Debugging challenge</span><h3>3. Fix the list index</h3><p>The list has three items. Why does this code fail, and how can you fix it?</p><pre><code>colors = ["red", "green", "blue"]
+print(colors[3])</code></pre><details><summary>Reveal fix &amp; explanation</summary><div class="activity-answer"><strong>Fix: <code>print(colors[2])</code></strong><p>List indexes start at 0, so the valid indexes are 0, 1 and 2. Index 3 raises an <code>IndexError</code>.</p></div></details></article>
+  </div>
+</section>
 <footer><strong>Kiran Mudaraddi · Python Programming · Modules 1 & 2</strong><br/>Interactive course notes for classroom learning, self-study and lab preparation.</footer>
 <script>
 const topics=[...document.querySelectorAll('.topic')];
