@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A guided Python learning path with lesson checkpoints, practice, and a mini-project.">
+<title>Python Guided Learning Path | Kiran Mudaraddi</title>
+<style>
+:root{--bg:#f6f7fb;--panel:#fff;--ink:#172033;--muted:#667085;--line:#e2e7ef;--blue:#2869a6;--gold:#ffd343;--green:#16835d;--shadow:0 12px 32px rgba(24,38,65,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}a{color:var(--blue)}.wrap{width:min(1080px,calc(100% - 32px));margin:auto}
+header{background:#111a31;color:white;padding:34px 0 30px}header .tag{font-size:.76rem;letter-spacing:.13em;font-weight:850;color:var(--gold)}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;margin:10px 0}header p{max-width:720px;color:#dce5f5;margin:12px 0 20px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:10px;padding:11px 16px;font-weight:800;text-decoration:none;cursor:pointer}.primary{background:var(--gold);color:#111a31}.secondary{background:white;color:#172033;border:1px solid var(--line)}main{padding:26px 0 56px}.overview{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-bottom:22px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}.panel h2{margin:0 0 8px;font-size:1.2rem}.muted{color:var(--muted)}.progress-track{height:10px;background:#e9edf4;border-radius:999px;overflow:hidden;margin:13px 0}.progress-fill{height:100%;width:0;background:var(--green);transition:width .2s}.progress-row{display:flex;justify-content:space-between;gap:12px;font-weight:800}.path{display:grid;gap:14px}.step{display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}.number{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:#e8f1fb;color:var(--blue);font-weight:900;font-size:1.1rem}.step.done .number{background:#dff5e9;color:var(--green)}.step h3{margin:0 0 5px;font-size:1.1rem}.step p{margin:0 0 12px;color:var(--muted)}.step-actions{display:flex;flex-wrap:wrap;gap:9px}.check{display:flex;align-items:center;gap:7px;white-space:nowrap;font-size:.88rem;font-weight:750}.check input{width:18px;height:18px;accent-color:var(--green)}.tagline{display:inline-block;background:#eef3fa;color:#35516e;padding:4px 8px;border-radius:7px;font-size:.72rem;font-weight:850;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px}.project{margin-top:24px;background:#111a31;color:white;border-radius:20px;padding:24px}.project p{color:#dce5f5}.project ul{padding-left:22px}.project code{background:#26344f;color:#fff;padding:2px 5px;border-radius:5px}.foot{padding:22px 0;color:var(--muted);font-size:.9rem}.foot a{font-weight:750}
+@media(max-width:700px){.overview{grid-template-columns:1fr}.step{grid-template-columns:44px 1fr;padding:15px;gap:12px}.number{width:40px;height:40px}.check{grid-column:2}.project{padding:18px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="tag">PYTHON PROGRAMMING · GUIDED PATH</div><h1>Learn step by step.<br>Practise as you go.</h1><p>A companion learning path for the existing Python Programming Modules 1 and 2. Follow the sequence, visit the original notes, practise in the Python Runner, and mark each checkpoint when you finish.</p><a class="btn primary" href="#learning-path">Start learning ↓</a> <a class="btn secondary" href="index.html">← Back to Python Notes</a></div></header>
+<main class="wrap">
+<div class="overview">
+<section class="panel"><h2>Your learning progress</h2><p class="muted">Your checkpoints are saved in this browser on this device. This is local progress only; it does not submit marks or change assessment records.</p><div class="progress-track" role="progressbar" aria-label="Learning path completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressBar"><div class="progress-fill" id="progressFill"></div></div><div class="progress-row"><span id="progressText">0 of 5 checkpoints complete</span><span id="progressPercent">0%</span></div></section>
+<section class="panel"><h2>How to use this path</h2><ol class="muted"><li>Open the original module notes.</li><li>Study the examples and attempt the activities.</li><li>Run and modify code in the Python Runner.</li><li>Mark the checkpoint only when you are ready.</li></ol></section>
+</div>
+<section id="learning-path" class="path" aria-label="Learning checkpoints">
+<article class="step" data-step="1"><div class="number">01</div><div><span class="tagline">Foundation</span><h3>Start with Module 1</h3><p>Study Python basics, variables, expressions, data types, operators, input/output, condition-free composition, and iteration. Use the original notes without any changes.</p><div class="step-actions"><a class="btn primary" href="index.html#part-A">Open Module 1 notes ↗</a><a class="btn secondary" href="index.html#module-1-interactive">Try interactive questions ↗</a></div></div><label class="check"><input type="checkbox" data-check="1"> Completed</label></article>
+<article class="step" data-step="2"><div class="number">02</div><div><span class="tagline">Practise</span><h3>Run and experiment with Python</h3><p>Use the browser-based runner to execute examples. Change values, predict what will happen, and compare the result with your prediction.</p><div class="step-actions"><a class="btn primary" href="index.html#python-runner">Open Python Runner ↗</a><a class="btn secondary" href="index.html#practice">Solved practice programs ↗</a></div></div><label class="check"><input type="checkbox" data-check="2"> Completed</label></article>
+<article class="step" data-step="3"><div class="number">03</div><div><span class="tagline">Work with data</span><h3>Continue with Module 2</h3><p>Study strings, indexing and slicing, string methods, tuples, lists, mutability, references, aliasing, cloning, and nested lists.</p><div class="step-actions"><a class="btn primary" href="index.html#module-2">Open Module 2 notes ↗</a><a class="btn secondary" href="index.html#module-2-interactive">Try interactive questions ↗</a></div></div><label class="check"><input type="checkbox" data-check="3"> Completed</label></article>
+<article class="step" data-step="4"><div class="number">04</div><div><span class="tagline">Check understanding</span><h3>Review and complete the available assessment</h3><p>Revise the notes and practice programs before opening the existing assessment section. Follow the instructions and schedule provided by your instructor.</p><div class="step-actions"><a class="btn primary" href="index.html#assessment">Go to existing assessment ↗</a></div></div><label class="check"><input type="checkbox" data-check="4"> Completed</label></article>
+<article class="step" data-step="5"><div class="number">05</div><div><span class="tagline">Apply your skills</span><h3>Mini-project: Student Marks Summary</h3><p>Build a small program that accepts student names and marks, stores them in lists, and displays a simple summary.</p><div class="step-actions"><a class="btn primary" href="#mini-project">View project brief ↓</a><a class="btn secondary" href="index.html#python-runner">Open Python Runner ↗</a></div></div><label class="check"><input type="checkbox" data-check="5"> Completed</label></article>
+</section>
+<section class="project" id="mini-project"><div class="tagline">Final mini-project</div><h2>Student Marks Summary</h2><p><strong>Goal:</strong> practise input, type conversion, lists, loops, and basic calculations using concepts already covered in the notes.</p><ul><li>Ask for the names of three students and their marks.</li><li>Store names and marks in separate lists.</li><li>Display each student's name and marks.</li><li>Calculate and display the class average.</li><li>Test the program with different values and handle invalid mark input if you are ready for an extra challenge.</li></ul><details><summary style="cursor:pointer;font-weight:800">Reveal a starter-code hint</summary><pre style="overflow:auto;background:#26344f;color:#fff;padding:14px;border-radius:10px"><code>names = []
+marks = []
+
+# TODO: collect three names and marks
+# TODO: append each value to the correct list
+# TODO: display the summary
+# TODO: calculate the average</code></pre></details><p>Try to complete the program yourself before looking for a full solution. Use the Python Runner to test it.</p></section>
+<div class="foot">Python Learning Hub · Prof. Kiran Mudaraddi · <a href="index.html">Return to the original Modules 1 &amp; 2</a></div>
+</main>
+<script>
+(function(){
+ const key='kiranPythonGuidedPathV1';
+ const checks=[...document.querySelectorAll('[data-check]')];
+ let saved={};
+ try{saved=JSON.parse(localStorage.getItem(key)||'{}')||{}}catch(e){saved={}}
+ checks.forEach(input=>{input.checked=Boolean(saved[input.dataset.check]);input.addEventListener('change',()=>{saved[input.dataset.check]=input.checked;try{localStorage.setItem(key,JSON.stringify(saved))}catch(e){};render()})});
+ function render(){const count=checks.filter(x=>x.checked).length;const pct=Math.round(count/checks.length*100);document.getElementById('progressFill').style.width=pct+'%';document.getElementById('progressText').textContent=count+' of '+checks.length+' checkpoints complete';document.getElementById('progressPercent').textContent=pct+'%';document.getElementById('progressBar').setAttribute('aria-valuenow',pct);checks.forEach(x=>x.closest('.step').classList.toggle('done',x.checked))}
+ render();
+})();
+</script>
+</body>
+</html>
