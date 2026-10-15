@@ -310,11 +310,20 @@ body.dark .topic-question{background:linear-gradient(90deg,#101b31,#111827);bord
 <header><div class="top"><button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open module menu" aria-expanded="false">☰ MENU</button><a class="brand" href="#top">Python <span>Module 1</span></a><div class="search"><input id="search" oninput="filterTopics()" placeholder="Search topics, loops, functions..."/></div><button class="theme" onclick="toggleTheme()">☾</button></div></header><div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
 <div class="layout"><aside class="course-sidebar">
 <div class="side-module">
-<div class="side-kicker">MODULE 1</div>
-<div class="side-title">Python Programming</div>
-<div class="side-subtitle">Fundamentals</div>
+<div class="side-kicker">PYTHON PROGRAMMING</div>
+<div class="side-title">Learning Modules</div>
+<div class="side-subtitle">Select a module</div>
 </div>
-<nav aria-label="Module navigation" class="side-nav">
+<div class="side-module-picker" aria-label="Choose Python module" style="padding:0 14px 16px;display:grid;gap:8px">
+<a href="#top" style="display:block;padding:11px 12px;border-radius:10px;background:var(--accent);color:#fff;border:1px solid var(--accent)">
+<strong style="display:block;font-size:.85rem">Module 1</strong><span style="font-size:.76rem;line-height:1.35;display:block">The Way of the Program</span><span style="font-size:.7rem;opacity:.9">Available</span></a>
+<a href="#module-2" style="display:block;padding:11px 12px;border-radius:10px;background:var(--bg);border:1px solid var(--line)">
+<strong style="display:block;font-size:.85rem">Module 2</strong><span style="font-size:.76rem;line-height:1.35;display:block">Strings, Tuples and Lists</span><span style="font-size:.7rem;color:var(--accent)">Available →</span></a>
+<div style="padding:9px 12px;border:1px dashed var(--line);border-radius:10px;color:var(--muted)"><strong style="display:block;font-size:.82rem">Module 3</strong><span style="font-size:.75rem">Under construction</span></div>
+<div style="padding:9px 12px;border:1px dashed var(--line);border-radius:10px;color:var(--muted)"><strong style="display:block;font-size:.82rem">Module 4</strong><span style="font-size:.75rem">Under construction</span></div>
+<div style="padding:9px 12px;border:1px dashed var(--line);border-radius:10px;color:var(--muted)"><strong style="display:block;font-size:.82rem">Module 5</strong><span style="font-size:.75rem">Under construction</span></div>
+</div>
+<nav aria-label="Module 1 topic navigation" class="side-nav">
 <a class="side-home active" href="#top"><span class="side-icon">⌂</span><span>Home</span></a>
 <div class="side-section">
 <a class="side-part" href="#part-A"><span>PART A</span><small>The Way of the Program</small></a>
