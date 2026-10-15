@@ -564,6 +564,39 @@ print(x + 2 * 3)</code></pre><details><summary>Reveal answer &amp; explanation</
 width = 3
 area = length + width
 print(area)</code></pre><details><summary>Reveal fix &amp; explanation</summary><div class="activity-answer"><strong>Fix: <code>area = length * width</code></strong><p>Rectangle area is length multiplied by width, so the correct output is 24. The original code runs but uses the wrong logic (a semantic error).</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>4. Type conversion</h3><p>What is printed?</p><pre><code>a = "7"
+b = int(a) + 2
+print(b)</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: 9</strong><p><code>int(a)</code> converts the string "7" to the integer 7, then 2 is added.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>5. Modulus operator</h3><p>What does the expression return?</p><pre><code>print(17 % 5)</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: 2</strong><p>The modulus operator returns the remainder. 17 divided by 5 leaves remainder 2.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>6. Updating variables</h3><p>Track the value of <code>x</code>.</p><pre><code>x = 4
+x = x + 3
+x = x * 2
+print(x)</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: 14</strong><p>First x becomes 7, then 7 is multiplied by 2 to become 14.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>7. While loop</h3><p>How many values are printed?</p><pre><code>n = 3
+while n > 0:
+    print(n, end=" ")
+    n -= 1</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: 3 2 1</strong><p>The loop repeats while n is greater than zero. It prints 3, 2, and 1 before stopping at 0.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>8. String repetition</h3><p>What is displayed?</p><pre><code>word = "Py"
+print(word * 3)</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: PyPyPy</strong><p>Multiplying a string by an integer repeats the string that many times.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Debugging challenge</span><h3>9. Fix the syntax</h3><p>Correct the code so it prints Hello.</p><pre><code>if True
+    print("Hello")</code></pre><details><summary>Reveal fix &amp; explanation</summary><div class="activity-answer"><strong>Fix: add a colon after <code>True</code>.</strong><pre><code>if True:
+    print("Hello")</code></pre><p>A compound statement such as <code>if</code> requires a colon before its indented block.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Debugging challenge</span><h3>10. Fix the input calculation</h3><p>The program should add two numbers entered by the user. Find the issue.</p><pre><code>a = input("First: ")
+b = input("Second: ")
+print(a + b)</code></pre><details><summary>Reveal fix &amp; explanation</summary><div class="activity-answer"><strong>Fix: convert inputs to numbers.</strong><pre><code>a = int(input("First: "))
+b = int(input("Second: "))
+print(a + b)</code></pre><p><code>input()</code> returns text. Without conversion, values such as "2" and "3" are joined as "23".</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>11. Continue in a loop</h3><p>Which numbers are printed?</p><pre><code>for n in range(1, 6):
+    if n == 3:
+        continue
+    print(n, end=" ")</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: 1 2 4 5</strong><p><code>continue</code> skips the remaining statements for the current iteration when n is 3.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Debugging challenge</span><h3>12. Fix the infinite loop</h3><p>Why does this loop never reach 5?</p><pre><code>n = 1
+while n < 5:
+    print(n)</code></pre><details><summary>Reveal fix &amp; explanation</summary><div class="activity-answer"><strong>Fix: update n inside the loop.</strong><pre><code>n = 1
+while n < 5:
+    print(n)
+    n += 1</code></pre><p>The loop condition stays true if n never changes. Incrementing n allows the loop to finish.</p></div></details></article>
+
   </div>
 </section>
 <section class="python-runner" id="python-runner">
@@ -1106,10 +1139,47 @@ nums.append(8)
 print(nums)</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: [2, 4, 6, 8]</strong><p><code>append()</code> adds one item to the end of the existing list; lists are mutable.</p></div></details></article>
     <article class="activity-card"><span class="activity-type">Debugging challenge</span><h3>3. Fix the list index</h3><p>The list has three items. Why does this code fail, and how can you fix it?</p><pre><code>colors = ["red", "green", "blue"]
 print(colors[3])</code></pre><details><summary>Reveal fix &amp; explanation</summary><div class="activity-answer"><strong>Fix: <code>print(colors[2])</code></strong><p>List indexes start at 0, so the valid indexes are 0, 1 and 2. Index 3 raises an <code>IndexError</code>.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>4. Negative string index</h3><p>What is printed?</p><pre><code>word = "PYTHON"
+print(word[-1])</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: N</strong><p>Index -1 refers to the last character of a string.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>5. String methods</h3><p>What is the result?</p><pre><code>text = "  hello  "
+print(text.strip().upper())</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: HELLO</strong><p><code>strip()</code> removes surrounding whitespace, then <code>upper()</code> converts letters to uppercase.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>6. Tuple indexing</h3><p>What value is printed?</p><pre><code>point = (4, 9, 12)
+print(point[1])</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: 9</strong><p>Tuple indexing starts at zero, so index 1 refers to the second item.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>7. List assignment</h3><p>What does the list contain?</p><pre><code>items = ["pen", "book"]
+items[0] = "pencil"
+print(items)</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: ['pencil', 'book']</strong><p>Lists are mutable, so an item can be replaced by assigning a new value at its index.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>8. List slicing</h3><p>What subset is returned?</p><pre><code>nums = [10, 20, 30, 40, 50]
+print(nums[1:4])</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: [20, 30, 40]</strong><p>The start index 1 is included and stop index 4 is excluded.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>9. List length</h3><p>What number is printed?</p><pre><code>values = [3, 6]
+values.extend([9, 12])
+print(len(values))</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: 4</strong><p><code>extend()</code> adds both items from the second list, leaving four items total.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Debugging challenge</span><h3>10. Fix string immutability</h3><p>Why does this fail?</p><pre><code>word = "cat"
+word[0] = "b"
+print(word)</code></pre><details><summary>Reveal fix &amp; explanation</summary><div class="activity-answer"><strong>One fix: build a new string.</strong><pre><code>word = "cat"
+word = "b" + word[1:]
+print(word)</code></pre><p>Strings are immutable: individual characters cannot be replaced by index. Create a new string instead.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Debugging challenge</span><h3>11. Copy a list</h3><p>Why does changing <code>b</code> also affect <code>a</code>?</p><pre><code>a = [1, 2, 3]
+b = a
+b.append(4)
+print(a)</code></pre><details><summary>Reveal fix &amp; explanation</summary><div class="activity-answer"><strong>Fix: create a shallow copy with <code>a.copy()</code>.</strong><pre><code>a = [1, 2, 3]
+b = a.copy()
+b.append(4)
+print(a)</code></pre><p>Assignment makes both names refer to the same list. <code>copy()</code> creates a separate outer list.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>12. Nested lists</h3><p>What is printed?</p><pre><code>matrix = [[1, 2], [3, 4]]
+print(matrix[1][0])</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: 3</strong><p><code>matrix[1]</code> selects the second inner list, and index 0 selects its first value.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Predict the output</span><h3>13. Tuple unpacking</h3><p>What are the values of x and y?</p><pre><code>x, y = (7, 2)
+print(x, y)</code></pre><details><summary>Reveal answer &amp; explanation</summary><div class="activity-answer"><strong>Output: 7 2</strong><p>Tuple unpacking assigns the first item to x and the second item to y.</p></div></details></article>
+    <article class="activity-card"><span class="activity-type">Debugging challenge</span><h3>14. Remove an item safely</h3><p>This code fails if "pear" is not present. How can you avoid the error?</p><pre><code>fruits = ["apple", "mango"]
+fruits.remove("pear")
+print(fruits)</code></pre><details><summary>Reveal fix &amp; explanation</summary><div class="activity-answer"><strong>Fix: check membership first.</strong><pre><code>fruits = ["apple", "mango"]
+if "pear" in fruits:
+    fruits.remove("pear")
+print(fruits)</code></pre><p><code>remove()</code> raises a <code>ValueError</code> if the value is absent. The membership test prevents that case.</p></div></details></article>
+
   </div>
 </section>
 <section class="guided-path" id="guided-learning-path" aria-labelledby="gp-title">
-<div class="gp-tag">New · Codecademy-inspired learning journey</div>
+<div class="gp-tag">Guided Python learning journey</div>
 <h2 id="gp-title">Guided Python Learning Path</h2>
 <p>Follow these checkpoints alongside the existing notes. Your original Module 1 and Module 2 content remains unchanged.</p>
 <div class="gp-progress" role="progressbar" aria-label="Learning path completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="gp-progress"><div class="gp-fill" id="gp-fill"></div></div>
