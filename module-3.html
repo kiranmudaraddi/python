@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Python Programming Module 3 notes: dictionaries, NumPy and file handling."><title>Python Programming · Module 3 | Kiran Mudaraddi</title>
+<style>
+:root{--bg:#f7f8fc;--card:#fff;--text:#18212f;--muted:#637083;--line:#e4e8ef;--accent:#3776ab;--code:#111827;--codeText:#e5e7eb;--shadow:0 10px 30px rgba(20,30,50,.08)}*{box-sizing:border-box}body{margin:0;font:16px/1.65 Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--text)}a{color:var(--accent);text-decoration:none}.top{position:sticky;top:0;background:#ffffffed;border-bottom:1px solid var(--line);padding:13px max(20px,calc((100% - 1180px)/2));z-index:5;display:flex;justify-content:space-between;gap:14px}.wrap{max-width:1180px;margin:auto;padding:28px 22px 70px}.hero{padding:48px 5vw;background:radial-gradient(circle at 85% 15%,#3776ab20,transparent 32%)}.tag{color:var(--accent);font-weight:900;letter-spacing:.14em;font-size:12px}.hero h1{font-size:clamp(38px,6vw,66px);line-height:1.05;margin:12px 0}.muted{color:var(--muted)}.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.pill{background:var(--card);border:1px solid var(--line);padding:7px 12px;border-radius:99px;font-size:13px}.part{padding:36px 0;border-top:1px solid var(--line);scroll-margin-top:75px}.part h2{margin:0 0 8px;font-size:30px}.topic{display:grid;grid-template-columns:48px 1fr;gap:15px;padding:24px 0;border-bottom:1px solid var(--line);scroll-margin-top:75px}.num{background:var(--code);color:white;border-radius:13px;width:42px;height:42px;display:grid;place-items:center;font-weight:900}.topic h3{margin:0 0 10px;font-size:22px}.code{margin:14px 0;background:var(--code);border-radius:13px;overflow:hidden;color:var(--codeText)}.codehead{background:#0b1220;color:#cbd5e1;padding:8px 13px;font-size:12px;display:flex;justify-content:space-between}.code button{background:#172033;color:#fff;border:1px solid #334155;border-radius:7px;padding:4px 9px;cursor:pointer}.code pre{margin:0;padding:15px;overflow:auto;font:13px/1.6 ui-monospace,monospace;white-space:pre}.out{border-top:1px solid #263244;padding:10px 15px;color:#cbd5e1;font:12px/1.5 ui-monospace,monospace}.out b{display:block;color:#ffd343;font:800 10px system-ui;letter-spacing:.1em;margin-bottom:5px}.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:17px;margin:14px 0}.panel table{border-collapse:collapse;width:100%}th,td{border:1px solid var(--line);padding:9px;text-align:left}th{background:#edf4fb}.practice details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px;margin:9px 0}.practice summary{font-weight:800;cursor:pointer}.quiz label{display:block;padding:9px;border:1px solid var(--line);border-radius:9px;margin:7px 0;cursor:pointer}.quiz button,.btn{background:var(--accent);color:white;border:0;padding:10px 15px;border-radius:9px;cursor:pointer;font-weight:800}.author{font-weight:800;color:var(--accent)}footer{background:#101827;color:#cbd5e1;padding:25px;text-align:center}body.dark{--bg:#0b1020;--card:#111827;--text:#edf2f7;--muted:#9aa7ba;--line:#263244;--accent:#74b9ff;--code:#050a12;--codeText:#e5e7eb}body.dark .top{background:#0b1020ed}body.dark th{background:#182334}body.dark .pill{background:#111827}@media(max-width:650px){.topic{grid-template-columns:1fr}.hero{padding:38px 22px}.wrap{padding:18px}.topic h3{font-size:20px}}
+</style></head><body>
+<div class="top"><a href="index.html"><strong>← Python Learning Hub</strong></a><div><button class="btn" onclick="document.body.classList.toggle('dark')">☾ Theme</button></div></div>
+<header class="hero"><div class="tag">PYTHON PROGRAMMING · MODULE 3</div><h1>Dictionaries, NumPy<br>&amp; File Handling</h1><p class="muted">Elaborated beginner-friendly notes with definitions, syntax, examples, expected outputs, practical exercises and a self-check quiz.</p><div class="author">Created by Prof. Kiran Mudaraddi</div><div class="pills"><span class="pill">Concepts &amp; examples</span><span class="pill">Solved programs</span><span class="pill">Lab practice</span><span class="pill">MCQ revision</span></div></header>
+<main class="wrap">
+<section class="part"><div class="tag">PART A</div><h2>Python Dictionaries</h2><p class="muted">A dictionary stores data as key-value pairs. Keys are unique and hashable; values can be of different types. Dictionaries are mutable and preserve insertion order.</p>
+<div class="topic" id="dict"><div class="num">01</div><div><h3>Creating and Accessing Dictionaries</h3><p>Example: a student record stores name, USN and marks under meaningful keys.</p><div class="code"><div class="codehead">Create and access <button onclick="copyCode(this)">Copy</button></div><pre><code>student = {
+    "name": "Ravi",
+    "usn": "101",
+    "marks": 85
+}
+print(student)
+print(student["name"])
+print(student.get("city"))</code></pre><div class="out"><b>OUTPUT</b>{'name': 'Ravi', 'usn': '101', 'marks': 85}<br>Ravi<br>None</div></div><p><code>dict[key]</code> raises KeyError if a key is missing. <code>get(key)</code> returns None (or a supplied default) instead.</p></div></div>
+<div class="topic" id="dictops"><div class="num">02</div><div><h3>Adding, Updating and Removing Elements</h3><div class="code"><div class="codehead">Dictionary operations <button onclick="copyCode(this)">Copy</button></div><pre><code>student = {"name": "Ravi", "marks": 80}
+student["age"] = 18       # add
+student["marks"] = 95     # update
+student.pop("age")        # remove
+print(student)</code></pre><div class="out"><b>OUTPUT</b>{'name': 'Ravi', 'marks': 95}</div></div><div class="panel"><table><tr><th>Method</th><th>Purpose</th></tr><tr><td>keys()</td><td>Returns dictionary keys</td></tr><tr><td>values()</td><td>Returns dictionary values</td></tr><tr><td>items()</td><td>Returns key-value pairs</td></tr><tr><td>get()</td><td>Safely accesses a value</td></tr><tr><td>update()</td><td>Adds or updates pairs</td></tr><tr><td>pop()</td><td>Removes a specified key</td></tr><tr><td>popitem()</td><td>Removes last inserted pair</td></tr><tr><td>clear()</td><td>Removes all pairs</td></tr><tr><td>copy()</td><td>Creates a shallow copy</td></tr></table></div><div class="code"><div class="codehead">Traversing with items() <button onclick="copyCode(this)">Copy</button></div><pre><code>student = {"name": "Ravi", "age": 18, "marks": 85}
+for key, value in student.items():
+    print(key, ":", value)</code></pre><div class="out"><b>OUTPUT</b>name : Ravi<br>age : 18<br>marks : 85</div></div></div></div>
+<div class="topic" id="nested"><div class="num">03</div><div><h3>Nested Dictionaries</h3><p>A dictionary can contain another dictionary. This is useful for storing multiple student records.</p><div class="code"><div class="codehead">Student records <button onclick="copyCode(this)">Copy</button></div><pre><code>students = {
+    "s1": {"name": "Ravi", "marks": 85},
+    "s2": {"name": "Priya", "marks": 90}
+}
+print(students["s1"]["name"])
+for sid, record in students.items():
+    print(sid, record["name"], record["marks"])</code></pre><div class="out"><b>OUTPUT</b>Ravi<br>s1 Ravi 85<br>s2 Priya 90</div></div></div></div>
+</section>
+<section class="part"><div class="tag">PART B</div><h2>NumPy – Numerical Python</h2><p class="muted">NumPy is a Python library for numerical computing. It provides efficient arrays, matrices and mathematical functions.</p>
+<div class="topic" id="numpy"><div class="num">04</div><div><h3>Installing, Importing and Creating Arrays</h3><p>Install using <code>pip install numpy</code> in a terminal (or <code>%pip install numpy</code> in Jupyter). Import with the common alias <code>np</code>.</p><div class="code"><div class="codehead">1D and 2D arrays <button onclick="copyCode(this)">Copy</button></div><pre><code>import numpy as np
+one_d = np.array([10, 20, 30, 40])
+two_d = np.array([[10, 20, 30],
+                  [40, 50, 60]])
+print(one_d)
+print(two_d)
+print(two_d[0, 0])
+print(two_d[1, 2])</code></pre><div class="out"><b>OUTPUT</b>[10 20 30 40]<br>[[10 20 30]<br> [40 50 60]]<br>10<br>60</div></div><p>NumPy arrays are designed for numerical work and usually hold elements of a common data type. Python lists are more general-purpose and can hold mixed types.</p></div></div>
+<div class="topic" id="arrayattrs"><div class="num">05</div><div><h3>Array Attributes and Special Arrays</h3><div class="panel"><table><tr><th>Attribute</th><th>Meaning</th></tr><tr><td>ndim</td><td>Number of dimensions</td></tr><tr><td>shape</td><td>Size along each dimension</td></tr><tr><td>size</td><td>Total number of elements</td></tr><tr><td>dtype</td><td>Data type of elements</td></tr></table></div><div class="code"><div class="codehead">Inspect array and create special arrays <button onclick="copyCode(this)">Copy</button></div><pre><code>import numpy as np
+a = np.array([[10, 20, 30], [40, 50, 60]])
+print(a.ndim, a.shape, a.size, a.dtype)
+print(np.zeros(3))
+print(np.ones(3))
+print(np.arange(1, 6))
+print(np.linspace(0, 10, 5))</code></pre><div class="out"><b>OUTPUT</b>2 (2, 3) 6 int64<br>[0. 0. 0.]<br>[1. 1. 1.]<br>[1 2 3 4 5]<br>[ 0. 2.5 5. 7.5 10.]</div></div><p>Exact integer dtype may vary by platform. <code>zeros()</code> creates zeros, <code>ones()</code> creates ones, <code>arange()</code> generates a range, and <code>linspace()</code> creates evenly spaced values including both endpoints.</p></div></div>
+<div class="topic" id="arrayops"><div class="num">06</div><div><h3>Arithmetic and Statistical Functions</h3><div class="code"><div class="codehead">Element-wise operations <button onclick="copyCode(this)">Copy</button></div><pre><code>import numpy as np
+a = np.array([10, 20, 30])
+b = np.array([1, 2, 3])
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)</code></pre><div class="out"><b>OUTPUT</b>[11 22 33]<br>[ 9 18 27]<br>[10 40 90]<br>[10. 10. 10.]</div></div><p>Common statistical functions: <code>np.sum()</code>, <code>np.mean()</code>, <code>np.max()</code>, <code>np.min()</code>, <code>np.median()</code> and <code>np.std()</code>.</p><div class="code"><div class="codehead">Student marks analysis <button onclick="copyCode(this)">Copy</button></div><pre><code>import numpy as np
+marks = np.array([70, 80, 90, 60, 100])
+print("Total:", np.sum(marks))
+print("Average:", np.mean(marks))
+print("Maximum:", np.max(marks))
+print("Minimum:", np.min(marks))
+print("Median:", np.median(marks))</code></pre><div class="out"><b>OUTPUT</b>Total: 400<br>Average: 80.0<br>Maximum: 100<br>Minimum: 60<br>Median: 80.0</div></div></div></div>
+<div class="topic" id="slicing"><div class="num">07</div><div><h3>Indexing, Slicing and Reshaping</h3><p>Indexing accesses one element. Slicing extracts a range; the stop index is excluded. Reshape changes dimensions while keeping the total number of elements unchanged.</p><div class="code"><div class="codehead">Slicing and reshape <button onclick="copyCode(this)">Copy</button></div><pre><code>import numpy as np
+a = np.array([10, 20, 30, 40, 50])
+print(a[0])
+print(a[1:4])
+print(a[:3])
+print(a[2:])
+b = np.arange(1, 7).reshape(2, 3)
+print(b)</code></pre><div class="out"><b>OUTPUT</b>10<br>[20 30 40]<br>[10 20 30]<br>[30 40 50]<br>[[1 2 3]<br> [4 5 6]]</div></div></div></div>
+</section>
+<section class="part"><div class="tag">PART C</div><h2>File Handling in Python</h2><p class="muted">File handling allows a program to create, read, write and append data in files so information can be used after a program ends.</p>
+<div class="topic" id="filemodes"><div class="num">08</div><div><h3>Opening Files and File Modes</h3><p>Syntax: <code>file = open("filename.txt", "mode")</code></p><div class="panel"><table><tr><th>Mode</th><th>Purpose</th></tr><tr><td>r</td><td>Read; file must exist</td></tr><tr><td>w</td><td>Write; creates or truncates existing file</td></tr><tr><td>a</td><td>Append at the end</td></tr><tr><td>x</td><td>Create new file; fails if it exists</td></tr><tr><td>r+</td><td>Read and write without truncating</td></tr><tr><td>w+</td><td>Read and write; truncates existing file</td></tr><tr><td>a+</td><td>Read and append</td></tr></table></div><p><strong>Warning:</strong> Opening an existing file in <code>w</code> mode erases its previous contents. Use <code>a</code> to add content at the end.</p></div></div>
+<div class="topic" id="readwrite"><div class="num">09</div><div><h3>Writing, Reading, Appending and Closing</h3><div class="code"><div class="codehead">Write and read a student file <button onclick="copyCode(this)">Copy</button></div><pre><code>with open("student.txt", "w") as file:
+    file.write("Name: Ravi\\n")
+    file.write("USN: 101\\n")
+    file.write("Marks: 85\\n")
+
+with open("student.txt", "r") as file:
+    print(file.read())</code></pre><div class="out"><b>OUTPUT</b>Name: Ravi<br>USN: 101<br>Marks: 85</div></div><p>The <code>with</code> statement automatically closes the file when the block finishes.</p><ul><li><code>read()</code> reads the whole file or a specified number of characters.</li><li><code>readline()</code> reads one line.</li><li><code>readlines()</code> returns remaining lines as a list.</li><li><code>write()</code> writes a string.</li><li><code>close()</code> closes a file opened manually.</li></ul><div class="code"><div class="codehead">Append and count lines <button onclick="copyCode(this)">Copy</button></div><pre><code>with open("student.txt", "a") as file:
+    file.write("Course: Python Programming\\n")
+
+with open("student.txt", "r") as file:
+    lines = file.readlines()
+    print("Number of lines:", len(lines))
+    print("First line:", lines[0].strip())</code></pre><div class="out"><b>OUTPUT</b>Number of lines: 4<br>First line: Name: Ravi</div></div><p><code>tell()</code> returns the current file pointer position; <code>seek(position)</code> moves it.</p></div></div>
+</section>
+<section class="part practice" id="practice"><div class="tag">PART D</div><h2>Programming Practice</h2><p class="muted">Try each exercise before opening its hint.</p>
+<details><summary>1. Create a student dictionary and display all pairs.</summary><p>Use name, USN and marks as keys.</p><pre><code>student = {"name":"Asha", "usn":"102", "marks":88}
+for key, value in student.items():
+    print(key, value)</code></pre></details>
+<details><summary>2. Count word frequency using a dictionary.</summary><pre><code>sentence = "python is easy and python is useful"
+frequency = {}
+for word in sentence.split():
+    frequency[word] = frequency.get(word, 0) + 1
+print(frequency)</code></pre></details>
+<details><summary>3. Analyse 10 student marks using NumPy.</summary><pre><code>import numpy as np
+marks = np.array([72,80,65,91,88,76,84,69,95,78])
+print(np.mean(marks), np.max(marks), np.min(marks))</code></pre></details>
+<details><summary>4. Write student details to a text file and read them.</summary><pre><code>with open("class.txt", "w") as f:
+    f.write("Ravi,85\\nPriya,90\\n")
+with open("class.txt", "r") as f:
+    print(f.read())</code></pre></details>
+<details><summary>5. Count the words in a text file.</summary><pre><code>with open("sample.txt", "r") as f:
+    text = f.read()
+print("Words:", len(text.split()))</code></pre></details>
+<details><summary>6. Create nested records for three students and find the topper.</summary><pre><code>students = {
+ "s1":{"name":"Ravi","marks":85},
+ "s2":{"name":"Priya","marks":92},
+ "s3":{"name":"Anil","marks":78}
+}
+topper = max(students.values(), key=lambda x: x["marks"])
+print(topper["name"], topper["marks"])</code></pre></details>
+</section>
+<section class="part quiz" id="quiz"><div class="tag">SELF ASSESSMENT</div><h2>Module 3 MCQ Quiz</h2><p class="muted">12 questions · Select an answer and submit to check your score.</p><div class="panel" id="quizbox"></div></section>
+</main><footer>Prof. Kiran Mudaraddi · Python Programming · Module 3</footer>
+<script>
+function copyCode(btn){const t=btn.closest('.code').querySelector('code').innerText;navigator.clipboard.writeText(t).then(()=>{btn.textContent='Copied';setTimeout(()=>btn.textContent='Copy',1000)})}
+const qs=[
+["Which structure stores key-value pairs?",["List","Tuple","Dictionary","Set"],2],
+["Which dictionary method returns all keys?",["values()","keys()","items()","get()"],1],
+["Which method removes a specified dictionary key?",["append()","pop()","insert()","sort()"],1],
+["NumPy stands for:",["Number Python","Numerical Python","New Python","Numeric Program"],1],
+["Which attribute returns number of dimensions?",["shape","size","ndim","dtype"],2],
+["Which function creates an array of zeros?",["np.ones()","np.zeros()","np.arange()","np.mean()"],1],
+["Which function calculates arithmetic mean?",["np.sum()","np.max()","np.mean()","np.min()"],2],
+["What does reshape() change?",["Values","Dimensions","Array name","File"],1],
+["Which file mode is used to read?",["w","a","r","x"],2],
+["Which mode appends data?",["r","a","x","w"],1],
+["Which method reads the entire file?",["read()","readline()","write()","close()"],0],
+["Which statement closes a file automatically?",["for","if","with","while"],2]
+];
+let answers={};
+function renderQuiz(){const box=document.getElementById('quizbox');box.innerHTML='';qs.forEach((q,i)=>{const d=document.createElement('div');d.style.marginBottom='16px';const p=document.createElement('strong');p.textContent=(i+1)+'. '+q[0];d.appendChild(p);q[1].forEach((o,j)=>{const l=document.createElement('label');l.style.display='block';const r=document.createElement('input');r.type='radio';r.name='q'+i;r.value=j;r.addEventListener('change',()=>answers[i]=j);l.appendChild(r);l.append(' '+String.fromCharCode(65+j)+'. '+o);d.appendChild(l)});box.appendChild(d)});const b=document.createElement('button');b.textContent='Submit Quiz';b.className='btn';b.onclick=()=>{if(Object.keys(answers).length!==qs.length){alert('Please answer all 12 questions.');return}const score=qs.filter((q,i)=>answers[i]===q[2]).length;box.insertAdjacentHTML('beforeend','<h3>Your score: '+score+' / '+qs.length+'</h3><button class="btn" onclick="answers={};renderQuiz()">Retake Quiz</button>');b.disabled=true};box.appendChild(b)}
+renderQuiz();
+</script></body></html>
