@@ -8,27 +8,27 @@
 <main class="wrap">
 <section class="part"><div class="tag">PART A</div><h2>Python Dictionaries</h2><p class="muted">A dictionary stores data as key-value pairs. Keys are unique and hashable; values can be of different types. Dictionaries are mutable and preserve insertion order.</p>
 <div class="topic" id="dict"><div class="num">01</div><div><h3>Creating and Accessing Dictionaries</h3><p>Example: a student record stores name, USN and marks under meaningful keys.</p><div class="code"><div class="codehead">Create and access <button onclick="copyCode(this)">Copy</button></div><pre><code>student = {
-    "name": "Ravi",
+    "name": "Kiran",
     "usn": "101",
     "marks": 85
 }
 print(student)
 print(student["name"])
-print(student.get("city"))</code></pre><div class="out"><b>OUTPUT</b>{'name': 'Ravi', 'usn': '101', 'marks': 85}<br>Ravi<br>None</div></div><p><code>dict[key]</code> raises KeyError if a key is missing. <code>get(key)</code> returns None (or a supplied default) instead.</p></div></div>
-<div class="topic" id="dictops"><div class="num">02</div><div><h3>Adding, Updating and Removing Elements</h3><div class="code"><div class="codehead">Dictionary operations <button onclick="copyCode(this)">Copy</button></div><pre><code>student = {"name": "Ravi", "marks": 80}
+print(student.get("city"))</code></pre><div class="out"><b>OUTPUT</b>{'name': 'Kiran', 'usn': '101', 'marks': 85}<br>Kiran<br>None</div></div><p><code>dict[key]</code> raises KeyError if a key is missing. <code>get(key)</code> returns None (or a supplied default) instead.</p></div></div>
+<div class="topic" id="dictops"><div class="num">02</div><div><h3>Adding, Updating and Removing Elements</h3><div class="code"><div class="codehead">Dictionary operations <button onclick="copyCode(this)">Copy</button></div><pre><code>student = {"name": "Kiran", "marks": 80}
 student["age"] = 18       # add
 student["marks"] = 95     # update
 student.pop("age")        # remove
-print(student)</code></pre><div class="out"><b>OUTPUT</b>{'name': 'Ravi', 'marks': 95}</div></div><div class="panel"><table><tr><th>Method</th><th>Purpose</th></tr><tr><td>keys()</td><td>Returns dictionary keys</td></tr><tr><td>values()</td><td>Returns dictionary values</td></tr><tr><td>items()</td><td>Returns key-value pairs</td></tr><tr><td>get()</td><td>Safely accesses a value</td></tr><tr><td>update()</td><td>Adds or updates pairs</td></tr><tr><td>pop()</td><td>Removes a specified key</td></tr><tr><td>popitem()</td><td>Removes last inserted pair</td></tr><tr><td>clear()</td><td>Removes all pairs</td></tr><tr><td>copy()</td><td>Creates a shallow copy</td></tr></table></div><div class="code"><div class="codehead">Traversing with items() <button onclick="copyCode(this)">Copy</button></div><pre><code>student = {"name": "Ravi", "age": 18, "marks": 85}
+print(student)</code></pre><div class="out"><b>OUTPUT</b>{'name': 'Kiran', 'marks': 95}</div></div><div class="panel"><table><tr><th>Method</th><th>Purpose</th></tr><tr><td>keys()</td><td>Returns dictionary keys</td></tr><tr><td>values()</td><td>Returns dictionary values</td></tr><tr><td>items()</td><td>Returns key-value pairs</td></tr><tr><td>get()</td><td>Safely accesses a value</td></tr><tr><td>update()</td><td>Adds or updates pairs</td></tr><tr><td>pop()</td><td>Removes a specified key</td></tr><tr><td>popitem()</td><td>Removes last inserted pair</td></tr><tr><td>clear()</td><td>Removes all pairs</td></tr><tr><td>copy()</td><td>Creates a shallow copy</td></tr></table></div><div class="code"><div class="codehead">Traversing with items() <button onclick="copyCode(this)">Copy</button></div><pre><code>student = {"name": "Kiran", "age": 18, "marks": 85}
 for key, value in student.items():
-    print(key, ":", value)</code></pre><div class="out"><b>OUTPUT</b>name : Ravi<br>age : 18<br>marks : 85</div></div></div></div>
+    print(key, ":", value)</code></pre><div class="out"><b>OUTPUT</b>name : Kiran<br>age : 18<br>marks : 85</div></div></div></div>
 <div class="topic" id="nested"><div class="num">03</div><div><h3>Nested Dictionaries</h3><p>A dictionary can contain another dictionary. This is useful for storing multiple student records.</p><div class="code"><div class="codehead">Student records <button onclick="copyCode(this)">Copy</button></div><pre><code>students = {
-    "s1": {"name": "Ravi", "marks": 85},
-    "s2": {"name": "Priya", "marks": 90}
+    "s1": {"name": "Kiran", "marks": 85},
+    "s2": {"name": "Vanita", "marks": 90}
 }
 print(students["s1"]["name"])
 for sid, record in students.items():
-    print(sid, record["name"], record["marks"])</code></pre><div class="out"><b>OUTPUT</b>Ravi<br>s1 Ravi 85<br>s2 Priya 90</div></div></div></div>
+    print(sid, record["name"], record["marks"])</code></pre><div class="out"><b>OUTPUT</b>Kiran<br>s1 Kiran 85<br>s2 Vanita 90</div></div></div></div>
 </section>
 <section class="part"><div class="tag">PART B</div><h2>NumPy – Numerical Python</h2><p class="muted">NumPy is a Python library for numerical computing. It provides efficient arrays, matrices and mathematical functions.</p>
 <div class="topic" id="numpy"><div class="num">04</div><div><h3>Installing, Importing and Creating Arrays</h3><p>Install using <code>pip install numpy</code> in a terminal (or <code>%pip install numpy</code> in Jupyter). Import with the common alias <code>np</code>.</p><div class="code"><div class="codehead">1D and 2D arrays <button onclick="copyCode(this)">Copy</button></div><pre><code>import numpy as np
@@ -71,21 +71,21 @@ print(b)</code></pre><div class="out"><b>OUTPUT</b>10<br>[20 30 40]<br>[10 20 30
 <section class="part"><div class="tag">PART C</div><h2>File Handling in Python</h2><p class="muted">File handling allows a program to create, read, write and append data in files so information can be used after a program ends.</p>
 <div class="topic" id="filemodes"><div class="num">08</div><div><h3>Opening Files and File Modes</h3><p>Syntax: <code>file = open("filename.txt", "mode")</code></p><div class="panel"><table><tr><th>Mode</th><th>Purpose</th></tr><tr><td>r</td><td>Read; file must exist</td></tr><tr><td>w</td><td>Write; creates or truncates existing file</td></tr><tr><td>a</td><td>Append at the end</td></tr><tr><td>x</td><td>Create new file; fails if it exists</td></tr><tr><td>r+</td><td>Read and write without truncating</td></tr><tr><td>w+</td><td>Read and write; truncates existing file</td></tr><tr><td>a+</td><td>Read and append</td></tr></table></div><p><strong>Warning:</strong> Opening an existing file in <code>w</code> mode erases its previous contents. Use <code>a</code> to add content at the end.</p></div></div>
 <div class="topic" id="readwrite"><div class="num">09</div><div><h3>Writing, Reading, Appending and Closing</h3><div class="code"><div class="codehead">Write and read a student file <button onclick="copyCode(this)">Copy</button></div><pre><code>with open("student.txt", "w") as file:
-    file.write("Name: Ravi\\n")
+    file.write("Name: Kiran\\n")
     file.write("USN: 101\\n")
     file.write("Marks: 85\\n")
 
 with open("student.txt", "r") as file:
-    print(file.read())</code></pre><div class="out"><b>OUTPUT</b>Name: Ravi<br>USN: 101<br>Marks: 85</div></div><p>The <code>with</code> statement automatically closes the file when the block finishes.</p><ul><li><code>read()</code> reads the whole file or a specified number of characters.</li><li><code>readline()</code> reads one line.</li><li><code>readlines()</code> returns remaining lines as a list.</li><li><code>write()</code> writes a string.</li><li><code>close()</code> closes a file opened manually.</li></ul><div class="code"><div class="codehead">Append and count lines <button onclick="copyCode(this)">Copy</button></div><pre><code>with open("student.txt", "a") as file:
+    print(file.read())</code></pre><div class="out"><b>OUTPUT</b>Name: Kiran<br>USN: 101<br>Marks: 85</div></div><p>The <code>with</code> statement automatically closes the file when the block finishes.</p><ul><li><code>read()</code> reads the whole file or a specified number of characters.</li><li><code>readline()</code> reads one line.</li><li><code>readlines()</code> returns remaining lines as a list.</li><li><code>write()</code> writes a string.</li><li><code>close()</code> closes a file opened manually.</li></ul><div class="code"><div class="codehead">Append and count lines <button onclick="copyCode(this)">Copy</button></div><pre><code>with open("student.txt", "a") as file:
     file.write("Course: Python Programming\\n")
 
 with open("student.txt", "r") as file:
     lines = file.readlines()
     print("Number of lines:", len(lines))
-    print("First line:", lines[0].strip())</code></pre><div class="out"><b>OUTPUT</b>Number of lines: 4<br>First line: Name: Ravi</div></div><p><code>tell()</code> returns the current file pointer position; <code>seek(position)</code> moves it.</p></div></div>
+    print("First line:", lines[0].strip())</code></pre><div class="out"><b>OUTPUT</b>Number of lines: 4<br>First line: Name: Kiran</div></div><p><code>tell()</code> returns the current file pointer position; <code>seek(position)</code> moves it.</p></div></div>
 </section>
 <section class="part practice" id="practice"><div class="tag">PART D</div><h2>Programming Practice</h2><p class="muted">Try each exercise before opening its hint.</p>
-<details><summary>1. Create a student dictionary and display all pairs.</summary><p>Use name, USN and marks as keys.</p><pre><code>student = {"name":"Asha", "usn":"102", "marks":88}
+<details><summary>1. Create a student dictionary and display all pairs.</summary><p>Use name, USN and marks as keys.</p><pre><code>student = {"name":"Praveen", "usn":"102", "marks":88}
 for key, value in student.items():
     print(key, value)</code></pre></details>
 <details><summary>2. Count word frequency using a dictionary.</summary><pre><code>sentence = "python is easy and python is useful"
@@ -97,16 +97,18 @@ print(frequency)</code></pre></details>
 marks = np.array([72,80,65,91,88,76,84,69,95,78])
 print(np.mean(marks), np.max(marks), np.min(marks))</code></pre></details>
 <details><summary>4. Write student details to a text file and read them.</summary><pre><code>with open("class.txt", "w") as f:
-    f.write("Ravi,85\\nPriya,90\\n")
+    f.write("Kiran,85\\nVanita,90\\n")
 with open("class.txt", "r") as f:
     print(f.read())</code></pre></details>
 <details><summary>5. Count the words in a text file.</summary><pre><code>with open("sample.txt", "r") as f:
     text = f.read()
 print("Words:", len(text.split()))</code></pre></details>
 <details><summary>6. Create nested records for three students and find the topper.</summary><pre><code>students = {
- "s1":{"name":"Ravi","marks":85},
- "s2":{"name":"Priya","marks":92},
- "s3":{"name":"Anil","marks":78}
+ "s1":{"name":"Kiran","marks":85},
+ "s2":{"name":"Vanita","marks":92},
+ "s3":{"name":"Samarth","marks":78},
+ "s4":{"name":"Praveen","marks":89},
+ "s5":{"name":"Leo Messi","marks":98}
 }
 topper = max(students.values(), key=lambda x: x["marks"])
 print(topper["name"], topper["marks"])</code></pre></details>
