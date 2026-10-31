@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Interactive Python Programming Modules 1 and 2 — Kiran Mudaraddi" name="description"/><title>Python Programming · Modules 1 & 2 | Kiran Mudaraddi</title>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Interactive Python Programming Modules 1 and 2 — Kiran Mudaraddi" name="description"/><title>Python Programming · Modules 1, 2 & 3 | Kiran Mudaraddi</title>
 <style>
 :root{--bg:#f7f8fc;--card:#fff;--text:#18212f;--muted:#637083;--line:#e4e8ef;--accent:#3776ab;--accent2:#ffd343;--code:#111827;--codeText:#e5e7eb;--shadow:0 10px 30px rgba(20,30,50,.08)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}a{color:inherit;text-decoration:none}button,input{font:inherit}.progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:99}
@@ -82,6 +82,7 @@ line-height:1;
 @media(max-width:980px){.layout{grid-template-columns:1fr}aside{display:none}.four{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr 1fr}}@media(max-width:650px){.top{padding:10px}.brand{font-size:14px}.search{display:none}.hero{padding:50px 22px 40px}.content{padding:20px 22px 60px}.topic{grid-template-columns:1fr}.topic-num{width:40px;height:40px}.four,.practice-list,.grid{grid-template-columns:1fr}h1{font-size:48px}}
 
 
+#module2Topics .side-section{padding-top:8px}.side-tools-link{display:block!important;margin:10px 8px;padding:10px 11px!important;border:1px solid var(--line);border-radius:9px;color:var(--accent)!important;font-weight:800!important;font-size:12px!important}
 /* Screenshot-inspired course sidebar */
 .course-sidebar{padding:0 14px 28px;background:var(--card);border-right:1px solid var(--line)}
 .side-module{padding:34px 12px 22px;border-bottom:1px solid var(--line);margin-bottom:12px}
@@ -362,14 +363,15 @@ body.dark aside{background:rgba(17,24,39,.72)}
 <div class="side-module-picker" aria-label="Choose Python module" style="padding:0 14px 16px;display:grid;gap:8px">
 <a href="#top" style="display:block;padding:11px 12px;border-radius:10px;background:var(--accent);color:#fff;border:1px solid var(--accent)">
 <strong style="display:block;font-size:.85rem">Module 1</strong><span style="font-size:.76rem;line-height:1.35;display:block">The Way of the Program</span><span style="font-size:.7rem;opacity:.9">Available</span></a>
-<a href="#module-2" style="display:block;padding:11px 12px;border-radius:10px;background:var(--bg);border:1px solid var(--line)">
+<a href="#module-2" data-learning-module="2" style="display:block;padding:11px 12px;border-radius:10px;background:var(--bg);border:1px solid var(--line)">
 <strong style="display:block;font-size:.85rem">Module 2</strong><span style="font-size:.76rem;line-height:1.35;display:block">Strings, Tuples and Lists</span><span style="font-size:.7rem;color:var(--accent)">Available →</span></a>
 <a href="module-3.html" style="display:block;padding:11px 12px;border-radius:10px;background:var(--bg);border:1px solid var(--line)"><strong style="display:block;font-size:.85rem">Module 3</strong><span style="font-size:.76rem;line-height:1.35;display:block">Dictionaries · NumPy · File Handling</span><span style="font-size:.7rem;color:var(--accent)">Available →</span></a>
 <div style="padding:9px 12px;border:1px dashed var(--line);border-radius:10px;color:var(--muted)"><strong style="display:block;font-size:.82rem">Module 4</strong><span style="font-size:.75rem">Under construction</span></div>
 <div style="padding:9px 12px;border:1px dashed var(--line);border-radius:10px;color:var(--muted)"><strong style="display:block;font-size:.82rem">Module 5</strong><span style="font-size:.75rem">Under construction</span></div>
 </div>
-<nav aria-label="Module 1 topic navigation" class="side-nav">
+<nav aria-label="Python module topic navigation" class="side-nav">
 <a class="side-home active" href="#top"><span class="side-icon">⌂</span><span>Home</span></a>
+<div id="module1Topics">
 <div class="side-section">
 <a class="side-part" href="#part-A"><span>PART A</span><small>The Way of the Program</small></a>
 <a class="side-topic" href="#topic-1"><b>01</b><span>The Python Programming Language</span></a>
@@ -423,7 +425,8 @@ body.dark aside{background:rgba(17,24,39,.72)}
 <a href="#assessment"><span>📝</span> Assignment · 20 Marks</a>
 <a href="#assessment"><span>🏆</span> FA1 · 20 Marks</a>
 </div>
-
+</div>
+<div id="module2Topics" style="display:none">
 <div class="side-section">
 <a class="side-part" href="#module-2"><span>MODULE 2</span><small>Strings · Tuples · Lists</small></a>
 <a class="side-topic" href="#m2-strings"><b>33</b><span>Strings: indexing, slicing & methods</span></a>
@@ -433,7 +436,7 @@ body.dark aside{background:rgba(17,24,39,.72)}
 <a class="side-topic" href="#m2-nested"><b>37</b><span>Nested lists & matrices</span></a>
 </div>
 </nav>
-</aside><main id="top"><section class="hero"><span class="eyebrow">PYTHON PROGRAMMING · 1BPLC105B / 205B</span><h1>Learn Python. Practise. Build.</h1><p>Welcome to the Python Learning Hub by Prof. Kiran Mudaraddi. Explore guided notes, understand code examples, practise concepts, and run your own Python programs.</p><div class="author-credit"><strong>Created and maintained by</strong><br/><span>Prof. Kiran Mudaraddi</span></div><div class="meta"><span class="pill">Interactive Notes</span><span class="pill">Practice &amp; Revision</span><span class="pill">Browser-based Python Runner</span></div><div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px"><a href="#python-runner" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;background:var(--accent);color:white;font-weight:800;box-shadow:var(--shadow)">▶ Run Python Code</a><a href="#module-2" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid var(--line);background:var(--card);font-weight:800">Explore Module 2 →</a><a href="#part-A" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid var(--line);background:var(--card);font-weight:800">Start Module 1 →</a></div>
+</aside><main id="top"><section class="hero"><span class="eyebrow">PYTHON PROGRAMMING · 1BPLC105B / 205B</span><h1>Learn Python. Practise. Build.</h1><p>Welcome to the Python Learning Hub by Prof. Kiran Mudaraddi. Explore guided notes, understand code examples, practise concepts, and run your own Python programs.</p><div class="author-credit"><strong>Created and maintained by</strong><br/><span>Prof. Kiran Mudaraddi</span></div><div class="meta"><span class="pill">Interactive Notes</span><span class="pill">Practice &amp; Revision</span><span class="pill">Browser-based Python Runner</span></div><div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px"><a href="#python-runner" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;background:var(--accent);color:white;font-weight:800;box-shadow:var(--shadow)">▶ Run Python Code</a><a href="#module-2" data-learning-module="2" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid var(--line);background:var(--card);font-weight:800">Explore Module 2 →</a><a href="#part-A" data-learning-module="1" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid var(--line);background:var(--card);font-weight:800">Start Module 1 →</a></div>
 <div style="margin-top:16px;padding:16px;border:1px solid var(--line);border-radius:16px;background:var(--card);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px"><div><strong style="display:block;font-size:1.05rem">New: Guided Python Learning Path</strong><span style="color:var(--muted)">Follow lesson checkpoints, practise, track progress, and complete a mini-project.</span></div><a href="#guided-learning-path" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:10px;background:var(--accent);color:white;font-weight:800;text-decoration:none">Start learning path →</a></div>
 <div class="module-launcher" style="margin-top:34px">
 <h2 style="font-size:clamp(1.35rem,2.5vw,1.8rem);margin:0 0 8px">Python Programming Modules</h2>
@@ -1239,6 +1242,11 @@ marks = []
 <footer><strong>Kiran Mudaraddi · Python Programming · Modules 1 & 2</strong><br/>Interactive course notes for classroom learning, self-study and lab preparation.</footer>
 <script>
 const topics=[...document.querySelectorAll('.topic')];
+function setLearningModule(n){const one=document.getElementById('module1Topics'),two=document.getElementById('module2Topics');if(!one||!two)return;one.style.display=n===2?'none':'block';two.style.display=n===2?'block':'none';const nav=document.querySelector('.side-nav');if(nav)nav.setAttribute('aria-label','Module '+n+' topic navigation');}
+document.addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;if(a.dataset.learningModule)setLearningModule(Number(a.dataset.learningModule));else if(a.getAttribute('href')==='#module-2'||/^#m2-/.test(a.getAttribute('href')||''))setLearningModule(2);else if(/^#part-[A-D]$/.test(a.getAttribute('href')||'')||/^#topic-/.test(a.getAttribute('href')||''))setLearningModule(1);});
+window.addEventListener('hashchange',()=>{if(location.hash==='#module-2'||location.hash.startsWith('#m2-'))setLearningModule(2);else if(location.hash==='#part-A'||location.hash.startsWith('#topic-'))setLearningModule(1);});
+window.addEventListener('scroll',()=>{const m2=document.getElementById('module-2');if(m2){const r=m2.getBoundingClientRect();if(r.top<170&&r.bottom>170)setLearningModule(2);else if(r.top>=170)setLearningModule(1);}},{passive:true});
+if(location.hash==='#module-2'||location.hash.startsWith('#m2-'))setLearningModule(2);else setLearningModule(1);
 function filterTopics(){const q=document.getElementById('search').value.toLowerCase().trim();topics.forEach(t=>t.classList.toggle('hidden',q && !t.innerText.toLowerCase().includes(q)));}
 function toggleTheme(){document.body.classList.toggle('dark');localStorage.setItem('pyTheme',document.body.classList.contains('dark')?'dark':'light');}
 if(localStorage.getItem('pyTheme')==='dark')document.body.classList.add('dark');
