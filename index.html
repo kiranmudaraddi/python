@@ -358,6 +358,14 @@ body.dark aside{background:rgba(17,24,39,.72)}
 .new-lab-tag{display:inline-block;margin-left:5px;padding:2px 6px;border-radius:5px;background:#f2b824;color:#172033;font-size:9px;font-weight:950;letter-spacing:.08em;vertical-align:middle}
 .new-lab-highlight:hover{transform:translateY(-1px);box-shadow:0 0 0 4px rgba(242,184,36,.22),0 8px 22px rgba(242,184,36,.25)!important}
 body.dark .new-lab-highlight{border-color:#ffd343!important}
+
+.notes-download-group{margin-top:10px;padding:10px 9px 9px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+.notes-download-heading{padding:2px 3px 7px;font-size:10px;font-weight:950;letter-spacing:.1em;color:var(--muted)}
+.notes-download-group .notes-download{margin-top:5px!important;background:var(--card)}
+.notes-download-label{display:flex;flex:1;flex-direction:column;gap:2px;line-height:1.25}
+.notes-download-label strong{font-size:12px}
+.notes-download-label small{font-size:10px;font-weight:550;color:var(--muted)}
+.download-arrow{font-size:17px;font-weight:950;color:var(--accent);margin-left:auto}
 </style></head><body><div class="progress" id="progress"></div>
 <header><div class="top"><button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open module menu" aria-expanded="false">☰ MENU</button><a class="brand" href="#top">Kiran Mudaraddi <span>Python Learning Hub</span></a><div class="search"><input id="search" oninput="filterTopics()" placeholder="Search topics, loops, functions..."/></div><button class="theme" onclick="toggleTheme()">☾</button></div></header><div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
 <div class="layout"><aside class="course-sidebar">
@@ -428,8 +436,12 @@ body.dark .new-lab-highlight{border-color:#ffd343!important}
 <a class="new-lab-highlight" href="lab-programs.html"><span>🧪</span> Python Lab Programs - PRACTICE <span class="new-lab-tag">NEW</span></a>
 <a href="#practice"><span>🧪</span> Practice</a>
 <a href="#python-runner"><span>▶️</span> Run Python</a>
-<a class="notes-download" href="MODULE-1_PYTHON_NOTES.pdf" download><span>📘</span> Download Module 1 Notes</a>
-<a class="notes-download" href="Python_Module3_Notes_and_Question_Banks.pdf" download><span>📚</span> Download Module 3 Notes &amp; Question Banks</a>
+<div class="notes-download-group">
+<div class="notes-download-heading">📚 DOWNLOAD MODULE NOTES</div>
+<a class="notes-download" href="MODULE-1_PYTHON_NOTES.pdf" download><span>📘</span><span class="notes-download-label"><strong>Module 1</strong><small>The Way of the Program</small></span><span class="download-arrow">↓</span></a>
+<a class="notes-download" href="MODULE-2_PYTHON_NOTES.pdf" download><span>📗</span><span class="notes-download-label"><strong>Module 2</strong><small>Strings, Tuples and Lists</small></span><span class="download-arrow">↓</span></a>
+<a class="notes-download" href="Python_Module3_Notes_and_Question_Banks.pdf" download><span>📙</span><span class="notes-download-label"><strong>Module 3</strong><small>Notes &amp; Question Banks</small></span><span class="download-arrow">↓</span></a>
+</div>
 <a href="#assessment"><span>🎯</span> Quiz · 10 Marks</a>
 <a href="#assessment"><span>📝</span> Assignment · 20 Marks</a>
 <a href="#assessment"><span>🏆</span> FA1 · 20 Marks</a>
