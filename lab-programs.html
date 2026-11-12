@@ -77,7 +77,7 @@ except SystemExit:
 except Exception:
     traceback.print_exc()
 finally:
-    sys.stdout,_= _oldout,_olderr
+    sys.stdout,sys.stderr= _oldout,_olderr
 _out.getvalue()
 `);
 out.textContent=result||'(Program completed with no printed output.)';status.textContent='Execution finished. Change the code or input and run again.';
